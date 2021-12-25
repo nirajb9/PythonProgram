@@ -7,11 +7,9 @@ import sqlite3
 import random
 import tempfile
 
-
 f = ''
 flag = ''
 flags = ''
-
 
 def openAllDataSet():
     os.system('AllDataSet.py')
@@ -24,6 +22,9 @@ def openCalculation1():
 
 def openCalculation2():
     os.system('OddsCalculation.py')
+
+def openCalculation3():
+    os.system('ProOddsCalculation.py')
 
 root = Tk()
 root.geometry('1400x600')
@@ -38,6 +39,9 @@ Button(root, width=20,font=("Arial bold",10), text='Logit Calculation', command=
 
 Button(root, width=20,font=("Arial bold",10), text='Odds Calculation', command=openCalculation2).grid(row=1, column=5)
 
-Label(root, text="Logistic Regression Assumptions",font=("Arial bold",30)).grid(row=2, column=8)
+Button(root, width=20,font=("Arial bold",10), text='ProOdds Calculation', command=openCalculation3).grid(row=1, column=6)
+
+
+Label(root, text="Logistic Regression Assumptions",font=("Arial bold",30)).grid(row=3, column=0, columnspan=8)
 
 root.mainloop()
