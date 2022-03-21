@@ -1,0 +1,26 @@
+ArrayList arr1 = new ArrayList();
+            for(int i=0; i<ops.Length; i++)
+            {
+                if(ops[i].ToString()=="C")
+                {
+                    arr1.RemoveAt(arr1.Count - 1);
+                }
+                else if (ops[i].ToString() == "D")
+                {
+                    arr1.Add(Convert.ToInt32(arr1[arr1.Count - 1]) * 2);
+                }
+               else if (ops[i].ToString() == "+")
+                {
+                    arr1.Add(Convert.ToInt32(arr1[arr1.Count - 1]) + Convert.ToInt32(arr1[arr1.Count - 2]));
+                }
+                else
+                {
+                    arr1.Add(ops[i]);
+                }
+            }
+            int sum = 0;
+            for (int i = 0; i < arr1.Count; i++)
+            {
+                sum += Convert.ToInt32(arr1[i]);
+            }
+            Console.WriteLine(sum);
