@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form>
+    
+     <input type="button" onclick="fButton1()" value="0" id="button1" />
+	  <input type="button" onclick="fButton2()" value="0" id="button2" />
+	   <input type="button" onclick="fButton3()" value="0" id="button3" />
+	    <input type="button" onclick="fButtonS()" value="0" id="Sync" />
+ </form>
+
+ <script>
+ 
+ var gb1V =0; var gb2V =0; var gb3V =0; 
+ var syncClick =0; 
+ var flg1 = true; 
+ var flg2 = true; 
+ var flg3 = true;
+    function fButton1()
+    {
+	if(syncClick>2)
+	{
+	addbtn1();
+	flg1 = false;
+	
+		}
+		else
+		{
+	    gb1V = 1;
+        var value = parseInt(document.getElementById('button1').value);
+        value++;
+        document.getElementById('button1').value = value;
+		}
+    }
+	 function fButton2()
+    {
+	if(syncClick>2)
+	{
+	addbtn2();
+	flg2=false; 
+	
+		}
+		else
+		{
+		gb2V=1;
+		subbtn1();
+	    addbtn2();
+
+		}
+    }
+	 function fButton3()
+    {
+	if(syncClick>2)
+	{
+	addbtn3();
+	 flg3=false;
+	
+		}
+		else
+		{
+	   gb3V=1;
+	
+		subbtn2();
+		addbtn3();
+		}
+    }
+	function fButtonS()
+    {	
+	syncClick++;
+	if(gb2V==0)
+	    {
+		addbtn2();
+	  }
+	  if(gb3V==0)
+	    {
+		addbtn3();
+	  }
+	if(gb1V==0)
+	{
+	   addbtn1();
+	}
+	if(syncClick==3)
+	{
+	document.getElementById('button2').value = 1;
+	document.getElementById('button3').value = 1;
+	
+	}
+	if(syncClick>3)
+	{
+	if(flg1==true)
+	{
+	 addbtn1();
+	}
+	if(flg2==true)
+	{
+	 addbtn2();
+	}
+	if(flg3==true)
+	{
+	 addbtn3();
+	}
+	flg1 = true; flg2=true; flg3=true;
+	}
+	
+ 
+       
+    }
+	function	addbtn1()
+	{
+	var value1 = parseInt(document.getElementById('button1').value);
+        value1++;
+        document.getElementById('button1').value = value1;
+	}
+	function addbtn2()
+	{
+	var value1 = parseInt(document.getElementById('button2').value);
+        value1++;
+        document.getElementById('button2').value = value1;
+	}
+	function addbtn3()
+	{
+	var value1 = parseInt(document.getElementById('button3').value);
+        value1++;
+        document.getElementById('button3').value = value1;
+	}
+	
+	function subbtn1()
+	{
+	var value1 = parseInt(document.getElementById('button1').value);
+        value1--;
+        document.getElementById('button1').value = value1;
+	}
+	function subbtn2()
+	{
+	var value1 = parseInt(document.getElementById('button2').value);
+        value1--;
+        document.getElementById('button2').value = value1;
+	}
+	function subbtn3()
+	{
+	var value1 = parseInt(document.getElementById('button3').value);
+        value1--;
+        document.getElementById('buttone').value = value1;
+	}
+</script>
+
+</body>
+</html>
